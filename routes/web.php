@@ -3,15 +3,23 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrabajoController;
 use App\Http\Controllers\CalendarioController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VistaTareasController;
 
-
+Route::resource('trabajador',VistaTareasController::class);
 Route::resource('calendarios',CalendarioController::class);
 Route::resource('trabajos',TrabajoController::class);
 
 // routes/web.php
 
-Route::view('/administrador','admin.index')->name('admin.index');
-Route::view('/trabajador','trabajador.index')->name('trabajador.index');
+//se pone la ruta en la cual se muestran todos los trabajadores 
+Route::get('/administrador', [UserController::class, 'index'])->name('admin.index');
+
+
+//Route::view('/administrador','admin.index')->name('admin.index');
+
+
+//Route::view('/trabajador','trabajador.index')->name('trabajador.index');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
