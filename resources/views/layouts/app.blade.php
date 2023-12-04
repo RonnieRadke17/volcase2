@@ -52,17 +52,17 @@
 
                         @if(Auth::user()->rol == 'Administrador')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/descansos')}}">
+                            <a class="nav-link" href="{{url('/administrador')}}">
                             Trabajadores
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/reservaciones')}}">
+                            <a class="nav-link" href="{{url('/trabajos')}}">
                             Trabajos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/reservaciones')}}">
+                            <a class="nav-link" href="{{url('/calendarios')}}">
                             Calendario
                             </a>
                         </li>
