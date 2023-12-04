@@ -33,10 +33,12 @@ class LoginController extends Controller
         $user = Auth::user();
         if ($user->rol === 'Trabajador') {
             //return RouteServiceProvider::HOME;
-            return route('calendarios.index');
-        }else if($user->rol === 'Administrador'){//tiene que salir una ventana que le muestre todos los users
+            return route('trabajador.index');
+
+        }
+        else if($user->rol === 'Administrador'){//tiene que salir una ventana que le muestre todos los users
             //return RouteServiceProvider::HOME;
-            return route('trabajos.index');
+            return route('admin.index');
             
         }
         

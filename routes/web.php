@@ -7,6 +7,11 @@ use App\Http\Controllers\CalendarioController;
 
 Route::resource('calendarios',CalendarioController::class);
 Route::resource('trabajos',TrabajoController::class);
+
+// routes/web.php
+
+Route::view('/administrador','admin.index')->name('admin.index');
+Route::view('/trabajador','trabajador.index')->name('trabajador.index');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
