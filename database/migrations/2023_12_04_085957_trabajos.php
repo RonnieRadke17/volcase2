@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('fecha_Inicio')->nullable();
             $table->date('fecha_Fin')->nullable();
             $table->text('comentario')->nullable();
+            $table->enum('status',['Asignada','Completada']);
             $table->timestamps();
             
         });

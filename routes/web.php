@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrabajoController;
 
+Route::resource('trabajos',TrabajoController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
