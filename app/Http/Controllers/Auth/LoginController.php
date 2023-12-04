@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 
 class LoginController extends Controller
 {
@@ -26,7 +27,22 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+
+     protected function redirectTo()
+    {
+        $user = Auth::user();
+        if ($user->rol === 'Trabajador') {
+            //return RouteServiceProvider::HOME;
+            return route('calendarios.index');
+        }else if($user->rol === 'Administrador'){//tiene que salir una ventana que le muestre todos los users
+            //return RouteServiceProvider::HOME;
+            return route('trabajos.index');
+            
+        }
+        
+        //$redirectTo = RouteServiceProvider::HOME;
+    } 
+    
 
     /**
      * Create a new controller instance.

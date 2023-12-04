@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrabajoController;
+use App\Http\Controllers\CalendarioController;
 
+
+Route::resource('calendarios',CalendarioController::class);
 Route::resource('trabajos',TrabajoController::class);
 /*
 |--------------------------------------------------------------------------
