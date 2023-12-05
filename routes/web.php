@@ -13,6 +13,9 @@ Route::get('/administrador', [mostrarTrabajadoresController::class, 'index']);//
 //Route::get('/trabajador', [mostrarTrabajosController::class, 'index']);//no mover ya muestra los trabajos
 
 Route::resource('trabajador',TrabajosController::class);//no le muevas nada we
+//no borrar// este me muestra el registro específico
+Route::get('/trabajador/{id}', [TrabajadorController::class, 'show'])->name('trabajador.show');
+
 
 
 Route::resource('trabajo',TrabajoController::class);//ya
