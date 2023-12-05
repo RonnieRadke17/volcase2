@@ -44,6 +44,10 @@
                             <strong>Status:</strong>
                             {{ $trabajo->status }}
                         </div>
+                        <div class="form-group">
+                            <strong>Id Trabajador:</strong>
+                            {{ $trabajo->ID_Trabajador }}
+                        </div>
 
                     </div>
                 </div>

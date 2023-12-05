@@ -1,46 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <h1>Lista de Usuarios</h1>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <h1>Listado de Usuarios</h1>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Rol</th>
-                                <!-- Agrega más columnas según sea necesario -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($users as $user)
-                                <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->rol }}</td>
-                                    <!-- Agrega más celdas según sea necesario -->
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    @if ($usuarios->count() > 0)
+        <ul>
+            @foreach ($usuarios as $usuario)
+                <li>{{ $usuario->name }} - {{ $usuario->email }}</li>
+                <!-- Puedes mostrar más detalles según tus necesidades -->
+            @endforeach
+        </ul>
+    @else
+        <p>No hay usuarios registrados.</p>
+    @endif
 @endsection

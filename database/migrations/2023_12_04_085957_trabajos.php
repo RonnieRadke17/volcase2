@@ -19,9 +19,12 @@ return new class extends Migration
             $table->date('fecha_Fin')->nullable();
             $table->text('comentario')->nullable();
             $table->enum('status',['Asignada','Completada']);
+            // Agregar la clave foránea
+            $table->foreignId('ID_Trabajador')->constrained('users');
+        
             $table->timestamps();
-            
         });
+        
     }
 
     /**

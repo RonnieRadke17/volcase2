@@ -47,7 +47,7 @@ class TrabajoController extends Controller
 
         $trabajo = Trabajo::create($request->all());
 
-        return redirect()->route('trabajos.index')
+        return redirect()->route('trabajo.index')
             ->with('success', 'Trabajo created successfully.');
     }
 
@@ -90,7 +90,7 @@ class TrabajoController extends Controller
 
         $trabajo->update($request->all());
 
-        return redirect()->route('trabajos.index')
+        return redirect()->route('trabajo.index')
             ->with('success', 'Trabajo updated successfully');
     }
 
@@ -103,7 +103,7 @@ class TrabajoController extends Controller
     {
         $trabajo = Trabajo::find($id)->delete();
 
-        return redirect()->route('trabajos.index')
+        return redirect()->route('trabajo.index')
             ->with('success', 'Trabajo deleted successfully');
     }
 }

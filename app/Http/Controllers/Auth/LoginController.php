@@ -38,7 +38,7 @@ class LoginController extends Controller
         }
         else if($user->rol === 'Administrador'){//tiene que salir una ventana que le muestre todos los users
             //return RouteServiceProvider::HOME;
-            return route('admin.index');
+            return route('trabajo.index');
             
         }
         

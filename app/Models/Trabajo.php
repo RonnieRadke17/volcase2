@@ -14,10 +14,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property $fecha_Fin
  * @property $comentario
  * @property $status
+ * @property $ID_Trabajador
  * @property $created_at
  * @property $updated_at
  *
  * @property Calendario[] $calendarios
+ * @property User $user
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -26,6 +28,7 @@ class Trabajo extends Model
     
     static $rules = [
 		'status' => 'required',
+		'ID_Trabajador' => 'required',
     ];
 
     protected $perPage = 20;
@@ -35,7 +38,7 @@ class Trabajo extends Model
      *
      * @var array
      */
-    protected $fillable = ['trabajo','descripcion','fecha_Inicio','fecha_Fin','comentario','status'];
+    protected $fillable = ['trabajo','descripcion','fecha_Inicio','fecha_Fin','comentario','status','ID_Trabajador'];
 
 
     /**
@@ -44,6 +47,14 @@ class Trabajo extends Model
     public function calendarios()
     {
         return $this->hasMany('App\Models\Calendario', 'ID_Trabajo', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'ID_Trabajador');
     }
     
 

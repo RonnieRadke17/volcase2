@@ -31,6 +31,11 @@
             {{ Form::text('status', $trabajo->status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Status']) }}
             {!! $errors->first('status', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        <div class="form-group">
+            {{ Form::label('ID_Trabajador') }}
+            {{ Form::text('ID_Trabajador', $trabajo->ID_Trabajador, ['class' => 'form-control' . ($errors->has('ID_Trabajador') ? ' is-invalid' : ''), 'placeholder' => 'Id Trabajador']) }}
+            {!! $errors->first('ID_Trabajador', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
 
     </div>
     <div class="box-footer mt20">
