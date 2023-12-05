@@ -15,7 +15,7 @@ class mostrarTrabajadoresController extends Controller
         $usuarios = User::all();
 
         // Pasar los usuarios a la vista
-        return view('admin.index', compact('usuarios'));
+        return view('admin1.index', compact('usuarios'));
     }
 
     
