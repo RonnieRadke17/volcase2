@@ -7,6 +7,7 @@
         <div>
             <p>Trabajo: {{ $trabajo->trabajo }}</p>
             <p>Descripción: {{ $trabajo->descripcion }}</p>
+            <button>Completar</button>
             <!-- Agrega más detalles según sea necesario -->
         </div>
     @endforeach

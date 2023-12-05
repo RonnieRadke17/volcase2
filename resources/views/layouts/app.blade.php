@@ -52,7 +52,7 @@
 
                         @if(Auth::user()->rol == 'Administrador')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/trabajador')}}">
+                            <a class="nav-link" href="{{url('/administrador')}}">
                             Trabajadores
                             </a>
                         </li>

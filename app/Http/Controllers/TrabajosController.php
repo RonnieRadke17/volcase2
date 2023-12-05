@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-
+//tenemos que hacer que se actualice el trabajo en el apartado de comentario y status
 class TrabajosController extends Controller
 {
     /**
